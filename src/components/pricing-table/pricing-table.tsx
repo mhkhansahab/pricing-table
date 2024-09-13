@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Event as StencilEvent, EventEmitter, State } from '@stencil/core';
 
 @Component({
   tag: 'pricing-table',
@@ -6,9 +6,14 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class PricingTable {
+  @StencilEvent() handleButtonClick: EventEmitter;
+  @State() loading: boolean = true;
+
+  @State() products = [];
+
   private testData = [
     {
-      id: 'prod_QaZZY7T1S9KDuY',
+      id: 'test_1234',
       object: 'product',
       active: true,
       attributes: [],
@@ -62,7 +67,7 @@ export class PricingTable {
       url: null,
     },
     {
-      id: 'prod_QaRUIbwG4DQGEv',
+      id: 'test_1233',
       object: 'product',
       active: true,
       attributes: [],
@@ -129,10 +134,39 @@ export class PricingTable {
     },
   ];
 
+  async fetchProducts() {
+    try {
+      await new Promise(resolve => {
+        const timeout = setTimeout(() => {
+          resolve(true);
+          clearTimeout(timeout);
+        }, 3000);
+      });
+      // const response = await fetch('');
+      // this.products = (await response.json())?.data?.packages;
+      // console.log('api response ==>', response);
+      this.products = this.testData;
+    } catch (e) {
+      console.log('err ==>', e);
+    } finally {
+      this.loading = false;
+    }
+  }
+
+  async componentWillLoad() {
+    this.fetchProducts();
+  }
+
+  handleClick(product) {
+    this?.handleButtonClick?.emit(product);
+  }
+
   render() {
+    if (this.loading) return <SkeletonLoader />;
+
     return (
       <div class="card-container">
-        {this.testData?.map(product => {
+        {this.products?.map(product => {
           return (
             <div class="card">
               <div class="card-title">{product?.name}</div>
@@ -141,12 +175,12 @@ export class PricingTable {
                 <div>per month</div>
               </div>
               {product?.default_price && (
-                <button type="button" class="card-button">
+                <button type="button" class="card-button" onClick={() => this.handleClick(product)}>
                   Subscribe
                 </button>
               )}
               {!product?.default_price && (
-                <button type="button" class="card-button">
+                <button type="button" class="card-button" onClick={() => this.handleClick(product)}>
                   Contact Sales
                 </button>
               )}
@@ -165,3 +199,25 @@ export class PricingTable {
     );
   }
 }
+
+const SkeletonLoader = () => {
+  return (
+    <div class="skeleton-loader">
+      {Array(2)
+        .fill(0)
+        .map(() => (
+          <div class="skeleton-col">
+            <div class="skeleton-header"></div>
+            {Array(8)
+              .fill(0)
+              .map(() => (
+                <div class="skeleton-row">
+                  <div class="skeleton-cell"></div>
+                  <div class="skeleton-cell"></div>
+                </div>
+              ))}
+          </div>
+        ))}
+    </div>
+  );
+};

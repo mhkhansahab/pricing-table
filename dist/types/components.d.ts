@@ -9,8 +9,23 @@ export namespace Components {
     interface PricingTable {
     }
 }
+export interface PricingTableCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPricingTableElement;
+}
 declare global {
+    interface HTMLPricingTableElementEventMap {
+        "handleButtonClick": any;
+    }
     interface HTMLPricingTableElement extends Components.PricingTable, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPricingTableElementEventMap>(type: K, listener: (this: HTMLPricingTableElement, ev: PricingTableCustomEvent<HTMLPricingTableElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPricingTableElementEventMap>(type: K, listener: (this: HTMLPricingTableElement, ev: PricingTableCustomEvent<HTMLPricingTableElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPricingTableElement: {
         prototype: HTMLPricingTableElement;
@@ -22,6 +37,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface PricingTable {
+        "onHandleButtonClick"?: (event: PricingTableCustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "pricing-table": PricingTable;
