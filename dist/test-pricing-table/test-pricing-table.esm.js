@@ -1,0 +1,2 @@
+import{p as r,b as t}from"./p-900fe0bf.js";export{s as setNonce}from"./p-900fe0bf.js";import{g as a}from"./p-e1255160.js";var e=()=>{const s=import.meta.url;const t={};if(s!==""){t.resourcesUrl=new URL(".",s).href}return r(t)};e().then((async r=>{await a();return t([["p-da33d53d",[[1,"pricing-table"]]]],r)}));
+//# sourceMappingURL=test-pricing-table.esm.js.map
