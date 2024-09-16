@@ -10,14 +10,11 @@ const PricingTableStyle0 = pricingTableCss;
 const PricingTable = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
-        this.handleButtonClick = index.createEvent(this, "handle-button-click", 7);
+        this.handleButtonClick = index.createEvent(this, "handleButtonClick", 7);
         this.testData = [
             {
                 id: 'test_1234',
-                object: 'product',
                 active: true,
-                attributes: [],
-                created: 1722616400,
                 default_price: '200',
                 description: 'per user',
                 features: [
@@ -40,38 +37,11 @@ const PricingTable = class {
                         name: 'No Reporting',
                     },
                 ],
-                images: [],
-                livemode: false,
-                marketing_features: [
-                    {
-                        name: 'Calendar/Swimlane',
-                    },
-                    {
-                        name: '5 Plan Limit',
-                    },
-                    {
-                        name: '20 Communication',
-                    },
-                    {
-                        name: '30 Tasks',
-                    },
-                    {
-                        name: 'No Analytics',
-                    },
-                    {
-                        name: 'No Reporting',
-                    },
-                ],
-                metadata: {},
                 name: 'Professional',
-                url: null,
             },
             {
                 id: 'test_1233',
-                object: 'product',
                 active: true,
-                attributes: [],
-                created: 1722586384,
                 default_price: '',
                 description: null,
                 features: [
@@ -100,37 +70,7 @@ const PricingTable = class {
                         name: 'Support package',
                     },
                 ],
-                images: [],
-                livemode: false,
-                marketing_features: [
-                    {
-                        name: '10 Plan Limit',
-                    },
-                    {
-                        name: '100 communications TBC based on feedback from',
-                    },
-                    {
-                        name: '60 Tasks',
-                    },
-                    {
-                        name: 'Advanced analytics',
-                    },
-                    {
-                        name: '2 integrations to begin - viva engage and share point Outlook in next',
-                    },
-                    {
-                        name: 'SSO',
-                    },
-                    {
-                        name: 'Branding',
-                    },
-                    {
-                        name: 'Support package',
-                    },
-                ],
-                metadata: {},
                 name: 'Enterprise',
-                url: null,
             },
         ];
         this.loading = true;
