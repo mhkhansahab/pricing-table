@@ -1,2 +1,2 @@
-import{p as r,b as t}from"./p-c2c517c5.js";export{s as setNonce}from"./p-c2c517c5.js";import{g as a}from"./p-e1255160.js";var c=()=>{const s=import.meta.url;const t={};if(s!==""){t.resourcesUrl=new URL(".",s).href}return r(t)};c().then((async r=>{await a();return t([["p-e77a4549",[[1,"pricing-table",{loading:[32],products:[32]}]]]],r)}));
+import{p as r,b as t}from"./p-c2c517c5.js";export{s as setNonce}from"./p-c2c517c5.js";import{g as c}from"./p-e1255160.js";var o=()=>{const s=import.meta.url;const t={};if(s!==""){t.resourcesUrl=new URL(".",s).href}return r(t)};o().then((async r=>{await c();return t([["p-0b0516b8",[[1,"pricing-table",{loading:[32],products:[32]}]]]],r)}));
 //# sourceMappingURL=test-pricing-table.esm.js.map
