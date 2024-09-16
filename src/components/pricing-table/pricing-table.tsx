@@ -174,16 +174,16 @@ export class PricingTable {
                 &pound;{product?.default_price || 0}
                 <div>per month</div>
               </div>
-              {product?.default_price && (
+              {product?.default_price ? (
                 <button type="button" class="card-button" onClick={() => this.handleClick(product)}>
                   Subscribe
                 </button>
-              )}
-              {!product?.default_price && (
+              ) : (
                 <button type="button" class="card-button" onClick={() => this.handleClick(product)}>
                   Contact Sales
                 </button>
               )}
+
               <div class="feature-container">
                 <div class="feature-title">This includes:</div>
                 <ul class="feature-ul-container">
