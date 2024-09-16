@@ -6,7 +6,13 @@ import { Component, h, Event as StencilEvent, EventEmitter, State } from '@stenc
   shadow: true,
 })
 export class PricingTable {
-  @StencilEvent() handleButtonClick: EventEmitter;
+  @StencilEvent({
+    eventName: 'handle-button-click',
+    composed: true,
+    cancelable: true,
+    bubbles: true,
+  })
+  handleButtonClick: EventEmitter;
   @State() loading: boolean = true;
 
   @State() products = [];
