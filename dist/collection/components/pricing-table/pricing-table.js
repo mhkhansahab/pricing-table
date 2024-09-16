@@ -183,7 +183,7 @@ export class PricingTable {
     static get events() {
         return [{
                 "method": "handleButtonClick",
-                "name": "handleButtonClick",
+                "name": "handle-button-click",
                 "bubbles": true,
                 "cancelable": true,
                 "composed": true,

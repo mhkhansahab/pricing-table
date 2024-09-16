@@ -15,7 +15,7 @@ export interface PricingTableCustomEvent<T> extends CustomEvent<T> {
 }
 declare global {
     interface HTMLPricingTableElementEventMap {
-        "handleButtonClick": any;
+        "handle-button-click": any;
     }
     interface HTMLPricingTableElement extends Components.PricingTable, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPricingTableElementEventMap>(type: K, listener: (this: HTMLPricingTableElement, ev: PricingTableCustomEvent<HTMLPricingTableElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -37,7 +37,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface PricingTable {
-        "onHandleButtonClick"?: (event: PricingTableCustomEvent<any>) => void;
+        "onHandle-button-click"?: (event: PricingTableCustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "pricing-table": PricingTable;

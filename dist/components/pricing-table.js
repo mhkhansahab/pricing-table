@@ -8,7 +8,7 @@ const PricingTable$1 = /*@__PURE__*/ proxyCustomElement(class PricingTable exten
         super();
         this.__registerHost();
         this.__attachShadow();
-        this.handleButtonClick = createEvent(this, "handleButtonClick", 7);
+        this.handleButtonClick = createEvent(this, "handle-button-click", 7);
         this.testData = [
             {
                 id: 'test_1234',

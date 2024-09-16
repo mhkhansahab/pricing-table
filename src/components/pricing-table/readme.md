@@ -7,9 +7,9 @@
 
 ## Events
 
-| Event               | Description | Type               |
-| ------------------- | ----------- | ------------------ |
-| `handleButtonClick` |             | `CustomEvent<any>` |
+| Event                 | Description | Type               |
+| --------------------- | ----------- | ------------------ |
+| `handle-button-click` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

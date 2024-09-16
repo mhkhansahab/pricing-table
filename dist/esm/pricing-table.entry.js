@@ -6,7 +6,7 @@ const PricingTableStyle0 = pricingTableCss;
 const PricingTable = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.handleButtonClick = createEvent(this, "handleButtonClick", 7);
+        this.handleButtonClick = createEvent(this, "handle-button-click", 7);
         this.testData = [
             {
                 id: 'test_1234',
