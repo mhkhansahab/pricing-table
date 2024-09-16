@@ -6,12 +6,7 @@ import { Component, h, Event as StencilEvent, EventEmitter, State } from '@stenc
   shadow: true,
 })
 export class PricingTable {
-  @StencilEvent({
-    eventName: 'handle-button-click',
-    composed: true,
-    cancelable: true,
-    bubbles: true,
-  })
+  @StencilEvent()
   handleButtonClick: EventEmitter;
   @State() loading: boolean = true;
 
@@ -20,10 +15,7 @@ export class PricingTable {
   private testData = [
     {
       id: 'test_1234',
-      object: 'product',
       active: true,
-      attributes: [],
-      created: 1722616400,
       default_price: '200',
       description: 'per user',
       features: [
@@ -46,38 +38,11 @@ export class PricingTable {
           name: 'No Reporting',
         },
       ],
-      images: [],
-      livemode: false,
-      marketing_features: [
-        {
-          name: 'Calendar/Swimlane',
-        },
-        {
-          name: '5 Plan Limit',
-        },
-        {
-          name: '20 Communication',
-        },
-        {
-          name: '30 Tasks',
-        },
-        {
-          name: 'No Analytics',
-        },
-        {
-          name: 'No Reporting',
-        },
-      ],
-      metadata: {},
       name: 'Professional',
-      url: null,
     },
     {
       id: 'test_1233',
-      object: 'product',
       active: true,
-      attributes: [],
-      created: 1722586384,
       default_price: '',
       description: null,
       features: [
@@ -106,37 +71,7 @@ export class PricingTable {
           name: 'Support package',
         },
       ],
-      images: [],
-      livemode: false,
-      marketing_features: [
-        {
-          name: '10 Plan Limit',
-        },
-        {
-          name: '100 communications TBC based on feedback from',
-        },
-        {
-          name: '60 Tasks',
-        },
-        {
-          name: 'Advanced analytics',
-        },
-        {
-          name: '2 integrations to begin - viva engage and share point Outlook in next',
-        },
-        {
-          name: 'SSO',
-        },
-        {
-          name: 'Branding',
-        },
-        {
-          name: 'Support package',
-        },
-      ],
-      metadata: {},
       name: 'Enterprise',
-      url: null,
     },
   ];
 
